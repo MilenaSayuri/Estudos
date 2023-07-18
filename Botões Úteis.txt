@@ -1,0 +1,13 @@
+Ctrl + F
+Vai abrir uma telinha. No canto esquerdo, clique na setinha para aparecer uma segunda linha, escreva a palavra que deseja substituir
+
+Ctrl + D
+Agora você pode dar um duplo clique na palavra que deseja alterar e dar Ctrl +D para o VS selecionar as próximas palavras iguais
+
+-Uma outra coisa bem usada é digitar duas linhas ao mesmo tempo.
+-Se for uma embaixo da outra, basta deixar o cursor no lugar que deseja editar e segurar Shift + Alt + ↓. 
+-Mas se as linhas estiverem longe, Shift + Alt + Clique no local desejado.
+
+Alt + ↑ = Levar a linha de código para cima. (nao precisa selecionar)
+
+Alt + ↓ = Levar a linha atual de código para baixo. (nao precisa selecionar)
