@@ -14,22 +14,17 @@
 
 <body>
     <div class="main">
-
-        <form>
-            <div>
-                <h1 id="titulo">Cadastro do Formulário</h1>
-                <br>
-            </div>
             <fieldset class="grupo">
                 <!-- div: uma divisão na página para fins de layout -->
+                <h1 id="titulo">Cadastro do Formulário</h1>
                 <div class="campo">
                     <label for="name"><strong>Nome:</strong></label>
                     <input type="text" id="name" required />
                 </div>
 
                 <div class="campo">
-                    <label for="idade"><strong>Idade:</strong></label>
-                    <input type="date" id="idade" name="idade" placeholder="Selecione sua data de nascimento">
+                    <label for="dt_nascimento"><strong>Data de nascimento:</strong></label>
+                    <input type="date" id="dt_nascimento" name="dt_nascimento" placeholder="Selecione sua data de nascimento">
                 </div>
 
                 <div class="campo">
@@ -75,11 +70,10 @@
                     </div>
                 </fieldset>
                 <div class="submit">
-                    <button type="submit" class="btn btn-dark" href="google.com" onclick="mostrarDadosDoFormulario()">Enviar</button>
-                    <a href="https://www.google.com"> google </a>
+                    <button class="btn btn-dark" onclick="mostrarDadosDoFormulario()">Enviar</button>
                 </div>
             </fieldset>
-        </form>
+        
     </div>
 
     <script src="javascript.js"></script>
