@@ -1,0 +1,77 @@
+# 1-Por onde começo? - Analise de Dados de um Projeto com problema
+# Passo a passo do projeto:
+# Traduzir o passo a passo em python
+# Passo 1: Importar a base de dados
+
+import pandas #pacote que manipula a base de dados
+
+tabela = pandas.read_csv("cancelamento.csv") #documento selecionado, ler tal coisa
+
+# Passo 2: Vizualizar a base dados
+display(tabela) #exibir tabela
+#informação que nao ajuda, te atrapalha, se houver uma coluna que nao da infomação util se exclui
+#drop:
+#linha -> axis = 0
+#coluna -> axis = 1
+tabela = tabela.drop("CustomerID", axis=1) #digitar o nome da colunar no parametro igual, axis é utlizado para entender qual pegar linha ou coluna
+display(tabela)
+#se eu quiser voltar com o CustomerID é so excluir a linha 16 que ele volta, pq nao esta modificando o arquivo original
+
+# Passo 3: Tratamento de erros (resolver as cagadas da base de dados)
+#print() exibe informações, versao mais feia
+#display() exibe informações
+
+display(tabela.info()) #
+#tratar valores vazio, excluir o cliente que esta com valores vazios pq nao tem como analisar
+tabela = tabela.dropna() #.drop joga informação fora, dropna deleta valores vazios automaticamente
+display(tabela.info()) #so para mostrar as duas tabelas diferentes um antes e depois, mas so precisa de um display pra funcionar
+
+
+# Passo 4: Analise inicial dos dados (entender como estão os cancelamentos)
+#selecionar uma coluna da tabela, nome[""]
+display(tabela["cancelou"].value_counts) #.value_counts ele vai contar quantos valores tem naquela coluna
+display(tabela["cancelou"].value_counts(normalize=True)) #normalize=true, vai colocar todos na base 100, vai mostrar o porcentual
+
+tabela.groupby("duracao_contrato".mean()) #groupby pegar a base de dados toda, agrupa e cria 3 linhas, uma para cada
+display(tabela.groupby("duracao_contrato.mean")) 
+#mean ele faz uma media de todas as tabelas do selecionado duracao_contrato
+tabela.groupby("assinatura".mean())
+
+#contrato mensal sempre cancela:
+tabela = tabela[tabela["duracao_contrato"]!="Monthly"]
+#vamos ver o cancelamento tirando os caras do mensal
+display(tabela["cancelou"].value_counts(normalize=True).map("{:1%}".format)) #formato para exibir em porcento, 1 casa decimal
+
+
+# Passo 5: Analise profunda da base de dados(encontrando a causa dos cancelamentos)
+#analisar tudo, mais visual
+
+import plotly.express as px #plotly ferramenta de graficos interativos do python, as px estou dando o apelido para nao ficar escrevendo o protly.express
+
+#quero analisar o impacto no cancelamento, modo de analisar tudo como grafico
+for coluna in tabela.columns: #para cada coluna na tabela em todas as colunas, : executa oq ta em baixo dele (condição)
+  grafico = px.histogram(tabela, x="coluna", color="cancelou") #grafico de histogram precisa de 3 informações qual tabela, o eixo x da tabela e a cor é opcional
+  grafico.show() #exibir o grafico
+
+
+#utilizar o metodo de porcentagem nesses maiores problemas mostrados nos graficos
+
+#diferença do
+# show -> mostrar, exibir um grafico
+# display -> exibe alguma informação, em tabelas o display é mais bonitinho
+# print -> exibe alguma informação, em tabelas o display é mais feio
+
+
+# ligaçoes call center a partir de 5, cancelam
+tabela = tabela[tabela['ligacoes_callcenter'] < 5]
+
+# dias de atrasao a partir de 21 dias, cancelam
+tabela = tabela[tabela['dias_atraso'] <= 20]
+
+#ver o cancelamento tirando os caras do mensal
+display(tabela["cancelou"].value_counts)
+display(tabela["cancelou"].value_counts(normalize=True)) 
+
+# forma de pagamento - mesal
+# dias de atraso > 20
+# ligacoes de call center >= 5
