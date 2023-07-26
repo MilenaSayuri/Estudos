@@ -1,0 +1,168 @@
+Estrutura do HTML: começando com a declaração do tipo do documento Doctype
+
+!DOCTYPE <!--Doctype é uma declaração e começando sempre no topo-->
+
+<html> <!-- tag com um inicial e um fechamento-->
+
+<head> <!--dentro da tag head tem tags essenciais para criar uma pagina na web como o titulo
+metadados, css, javascript e etc coisas que nao aparecem diretamente na pagina mas ajudando
+na exibixão correta dentro da pagina-->
+</head>
+
+<body> <!-- na tag body é todo conteudo da pagina e fica visivel na web -->
+</body>
+
+</html>
+
+
+Atributos, por exemplo:
+
+<p class="minhaclass" id="paragrafo01">
+    <!-- dentro do elemento paragrafo um atributo do tipo class chamada minhaclass // podemos ter outros atributos como um identificador para esse paragrafo com um id chamada paragrafo01 -->
+    Olá Mundo!
+</p>
+
+<head>
+    <script defer scr=""> <!--atributo chamada defer e outro atributo chamado src que vai indicar o caminho-->
+    </script>
+
+    <!--ID é unico no contexto de uma pagina web, nao pode ser duplicado Class podem ter varios deles separados por espaço-->
+
+
+    Head: Title, Script, NoScript(<!--usada para detectar quando os scripts estão desativadas-->),
+    Link(<!--usada para definir alguns relacionamentos dentro do documento e outros recursos, utilizado principalmente para vincular arquivos css externo a uma pagina-->)
+    e Meta(<!--elas executam uma variedade de tarefas, muito importante para quem busca otimização de pagina-->)
+    <html>
+
+    <head>
+        <title>Meu curso HTML</title> <!--exibirá o titulo da página-->
+
+        <script> //código javascript </script>
+        <script src="arquivo.js"> </script>
+
+        <noscript>
+            <style>
+                .no-script {
+                    color: crimson;
+                }
+            </style>
+        </noscript>
+
+        <link href="arquivo.css" media="screen" rel="stylesheet">
+        <link rel="icon" type="image/png" size="16x16" href="favicon.png">
+
+        <style>
+            <!-- a tag style pode ser utilizada para adicionar estilos ao documento emm vez de carregar algum arquivo css externamente -->
+            body {
+            background-color:blueviolet;
+            color:white;
+            }
+        </style>
+
+        <meta name="description" content="Meu Curso Html"> <!--define qualquer informação de metadados que não podem ser definidos por outros elementos HTML. (<base>, <link>, <script>, <style> ou <title>)-->
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex">
+        <meta http-equiv="refresh" content="3;url=http://www.google.com.br">
+        <!--tag que funciona como um redirecionamento ou refresh na pagina, nesse caso esta sendo direcionado para a pagina google após 3 segundos-->
+    </head>
+
+
+    Body: Elemento de Bloco e Inline(<!--Os elementos inline podem ser exibidos em nível de bloco ou outros elementos inline. Eles ocupam somente a largura de seu conteúdo. Geralmente elementos inline devem ter somente dados em outros elementos inline-->)
+
+    <body>
+        <p></p>
+        <div></div> <!--Assim como as outras tags, também funciona como um container, porém a grande diferença é que a div não tem valor semântico, é apenas uma divisão na página para fins de layout-->
+
+        <h1></h1> <!--A família de cabeçalhos ou headings, define os títulos da página -->
+        <h2></h2>  <!--A família de cabeçalhos ou headings, define os títulos da página -->
+
+        <hr> <!--Essa tag constrói uma linha horizontal entre elementos, representa semanticamente uma quebra de conteúdo -->
+
+        <ul> <!-- representa uma lista de itens sem ordem rígida, isto é, uma coleção de itens que não trazem uma ordenação numérica e as suas posições, nessa lista, são irrelevantes-->
+            <li></li>
+        </ul>
+
+        <a href=""></a> <!--O elemento <a> com o atributo href cria-se um hiperligação nas páginas web, arquivos, endereços de emails, ligações na mesma página ou endereços na URL-->
+
+        <span></span> <!--O elemento span é um conteiner generico em linha para conteúdo fraseado , que não representa nada por natureza. Ele pode ser usado para agrupar elementos para fins de estilo (usando os atributos class ou id ), ou para compartilhar valores de atributos como lang-->
+
+    </body>
+
+    </html>
+
+
+    Tags para Texto: vc nao pode colocar um p dentro de um p,
+    Tags de bloco:
+    <p></p> <!--Paragrafo-->
+    <br/> <!--Quebra de linha-->
+    Tags de cabeçalho:
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    Tag negrito:
+    Meu mundo na <strong>web</strong> <!-- <strong>(algo aq)</strong> -->
+    Meu mundo na <b>web</b> <!-- <b>(algo aq)</b>-->
+    Tag itálico:
+    Meu mundo na <em>web</em> <!-- <em>(algo aq)</em>-->
+    Tag citações:
+    <blockquote>
+        Citações
+    </blockquote>
+    Tag linha na horizontal:
+    <hr/>
+    Tag listas:
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <dl>
+        <dt>123</dt>
+        <dd>456</dd>
+    </dl>
+    Tags de texto:
+    <sub>Sub tag</sub>
+    <small>Small tag</small>
+    <sup>Sup tag</sup>
+    <del>Del tag</del>
+    <ins>Ins tag</ins>
+    <mark>Mark tag</mark>
+
+
+    Tags de Container:
+    <div>
+        <!--é um container genérico para conteúdo de fluxo, que de certa forma não representa nada. Ele pode ser utilizado para agrupar elementos para fins de estilos (usando class ou id), ou porque eles compartilham valores de atributos, como lang. Ele deve ser utilizado somente quando não tiver outro elemento de semântica (tal como <article> ou <nav>)-->
+    </div>
+    <article>
+        <!-- representa uma composição independente em um documento, página, aplicação, ou site, ou que é destinado a ser distribuido de forma independente ou reutilizável, por exemplo, em sindicação. Este poderia ser o post de um fórum, um artigo de revista ou jornal, um post de um blog, um comentário enviado por um usuário, um gadget ou widget interativos, ou qualquer outra forma de conteúdo independente.-->
+    </article>
+    <section>
+        <!--representa uma seção genérica contida em um documento HTML, geralmente com um título, quando não existir um elemento semântico mais específico para representá-lo.Por exemplo, um menu de navegação deve estar dentro um elemento <nav>, mas uma lista de resultados de pesquisa ou a exibição de um mapa e seus controles não possuem elementos específicos, e podem ser colocados dentro de uma <section>.-->
+    </section>
+    <nav>
+        <!--representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação-->
+    </nav>
+    <aside>
+        <!-- representa uma seção de uma página que consiste de conteúdo que é tangencialmente relacionado ao conteúdo do seu entorno, que poderia ser considerado separado do conteúdo. Essas seções são, muitas vezes, representadas como barras laterais. Elas muitas vezes contem explicações laterais, como a definição de um glossário; conteúdo vagamente relacionado, como avisos; a biografia do autor; ou, em aplicações web, informações de perfil ou links de blogs relacionados.-->
+    </aside>
+    <header>
+        <!--representa um grupo de suporte introdutório ou navegacional. Pode conter alguns elementos de cabeçalho mas também outros elementos como um logo, seções de cabeçalho, formulário de pesquisa, e outros.-->
+    </header>
+    <main>
+        <!--define o conteúdo principal dentro do <body> em seu documento ou aplicação. Entende-se como conteúdo principal aquele relacionado diretamente com o tópico central da página ou com a funcionalidade central da aplicação-->
+    </main>
+    <footer>
+        <!--representa um rodapé para o seu sectioning content (conteúdo de seção) mais próximo ou sectioning root elemento (ou seja, seu parente mais próximo <article>, <aside>, <nav>, <section>, <blockquote>, <body>, <details>, <fieldset>, <figure>, <td> (en-US)). Normalmente um rodapé contém informações sobre o autor da seção de dados, direitos autorais ou links para documentos relacionados.-->
+    </footer>
+
+
+
+
