@@ -1,4 +1,3 @@
 # Estudos
 
-#baixar cancelamentos.csv para a utilizacao para a Aula 01
-https://drive.google.com/drive/folders/1uDesZePdkhiraJmiyeZ-w5tfc8XsNYFZ
+1. Baixar arquivo .csv para a utilização de análise [Drive Link]([url](https://drive.google.com/drive/folders/1uDesZePdkhiraJmiyeZ-w5tfc8XsNYFZ)https://drive.google.com/drive/folders/1uDesZePdkhiraJmiyeZ-w5tfc8XsNYFZ)
